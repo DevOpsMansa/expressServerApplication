@@ -93,7 +93,5 @@ Once you have completed your project, answer the following questions to help sol
 * Body-Parser - processes incoming request bodies, making it easier to handle POST and PUT requests. By parsing the body of an HTTP request and attaching it to the req. body property, it simplifies data extraction and manipulation in server-side logic. Allows us to serilize the data = an access the form data using the body property
 * dot evn module - Allows you to separate the secrete from your source code. 
 
-
-
 ## Author
 Eric (Mansa) Marah - Per Scholas
