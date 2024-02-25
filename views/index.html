@@ -1,9 +1,12 @@
+<!-- nodemon only restarts when updates are done to the js file and not the html, hence this will enhance live server to avoid restaring server everytime -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Express Server Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <!-- Header -->
@@ -17,6 +20,48 @@
             </nav>
         </header>
     <!-- /Header -->
+    <!-- Main site -->
+        <main id="site-main">
+            <div class="container">
+                <div class="box-nav d-flex-justify-between">
+                    <a href="/add-user" class="border-shadow">
+                        <span class="text-gradient">New User <i class="fas fa-user"></i></span>
+                    </a>
+                </div>
+                <!-- form handling -->
+                <form action="/" method="POST">
+                    <table class="table"></table>
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>@Email</th>
+                            <th>Gender</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Usernmae</td>
+                            <td>example@gmail.com</td>
+                            <td>Male</td>
+                            <td>Active</td>
+                            <td>
+                                <a href="#" class="btn border-shadow update">
+                                    <span class="text-gradient" ><i class="fas fa-pencil-alt"></i></span>
+                                    <a class="btn border-shadow delete">
+                                        <span class="text-gradient" ><i class="fas fa-times"></i></span>
+                                    </a>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </form>
+            </div>
+        </main>
+    <!-- /Main site -->
 
 </body>
 </html>
