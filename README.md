@@ -85,6 +85,8 @@ Once you have completed your project, answer the following questions to help sol
 * Text: Lipsum, a Lorem Ipsum text generator.https://www.lipsum.com/
 * Images: Pexels, a resource for stock photos (and other media). https://www.pexels.com/
 * GIFs: Motion Elements, a resource for GIFs (and other media).https://www.motionelements.com/search/gif?s=
+* ejs:https://ejs.co/
+What is the "E" for? "Embedded?" Could be. How about "Effective," "Elegant," or just "Easy"? EJS is a simple templating language that lets you generate HTML markup with plain JavaScript. No religiousness about how to organize things. No reinvention of iteration and control-flow. It's just plain JavaScript.
 
 
 ## Installations:
