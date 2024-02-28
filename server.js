@@ -1,8 +1,8 @@
-// Import necessary modules
+// Import modules
 const express = require('express');
 const bodyParser = require('body-parser');
 
-// Create an Express application
+// Creates an Express application
 const app = express();
 
 // Use middleware for parsing JSON and handling URL-encoded data
@@ -21,13 +21,20 @@ app.use((req, res, next) => {
   next();
 });
 
+// Additional custom middleware
+app.use((req, res, next) => {
+    console.log(`Path accessed: ${req.path}`);
+    next();
+  });
+
 // Error-handling Middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something went wrong!');
 });
 
-// Sample data
+
+// User Sample data
 const users = [
   { id: 1, name: 'John' },
   { id: 2, name: 'Jane' },
@@ -84,7 +91,52 @@ app.get('/dashboard', (req, res) => {
   res.render('dashboard', { users });
 });
 
-// Start the server on port 3000
+// Sample data for posts
+const posts = [
+  { id: 1, title: 'Post 1', content: 'God knows' },
+  { id: 2, title: 'Post 2', content: 'Programming is like sex' },
+  { id: 3, title: 'Post 3', content: 'Copy-and-Paste' },
+];
+
+// GET route for posts
+app.get('/posts', (req, res) => {
+  res.json(posts);
+});
+
+// POST route for creating posts
+app.post('/posts', (req, res) => {
+  const newPost = req.body;
+  posts.push(newPost);
+  res.status(201).json(newPost);
+});
+
+// Sample data for comments
+const comments = [
+  { id: 1, postId: 1, text: 'When I wrote this code, only God and I understood what I did. Now only God knows' },
+  { id: 2, postId: 1, text: 'Programming is like sex: One mistake and you have to support it for the rest of your life' },
+  { id: 3, postId: 2, text: 'Copy-and-Paste was programmed by programmers for programmers actually' },
+];
+
+// GET route for comments
+app.get('/comments', (req, res) => {
+  res.json(comments);
+});
+
+// POST route for creating comments
+app.post('/comments', (req, res) => {
+  const newComment = req.body;
+  comments.push(newComment);
+  res.status(201).json(newComment);
+});
+
+// Additional custom middleware
+app.use((req, res, next) => {
+  console.log(`Path accessed: ${req.path}`);
+  next();
+});
+
+
+// Starts the server on port 3000
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
