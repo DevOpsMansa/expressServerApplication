@@ -23,9 +23,9 @@ app.use((req, res, next) => {
 
 // Additional custom middleware
 app.use((req, res, next) => {
-    console.log(`Path accessed: ${req.path}`);
-    next();
-  });
+  console.log(`Path accessed: ${req.path}`);
+  next();
+});
 
 // Error-handling Middleware
 app.use((err, req, res, next) => {
@@ -33,11 +33,13 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something went wrong!');
 });
 
-
-// User Sample data
+// Sample data for users
 const users = [
-  { id: 1, name: 'John' },
-  { id: 2, name: 'Jane' },
+    { id: 1, name: 'John' },
+    { id: 2, name: 'Jane' },
+    { id: 3, name: 'Bob' },
+    { id: 4, name: 'Alice' },
+    { id: 5, name: 'Charlie' },
 ];
 
 // GET route for users
@@ -128,13 +130,6 @@ app.post('/comments', (req, res) => {
   comments.push(newComment);
   res.status(201).json(newComment);
 });
-
-// Additional custom middleware
-app.use((req, res, next) => {
-  console.log(`Path accessed: ${req.path}`);
-  next();
-});
-
 
 // Starts the server on port 3000
 const PORT = 3000;
